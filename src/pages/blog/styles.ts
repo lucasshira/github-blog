@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const BlogContainer = styled.div`
-  justify-content: center;
   display: flex;
+  align-items: center;
+  flex-direction: column;
 `

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ProfileContainer = styled.section`
-  background-color: ${props => props.theme['base-border']};
+  background-color: ${props => props.theme['base-profile']};
   max-width: 864px;
   height: 212px;
   border-radius: 10px;
@@ -11,10 +11,10 @@ export const ProfileContainer = styled.section`
   display: grid;
   grid-template-columns: 148px 1fr;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2rem;
 
   p {
-    margin-top: 0.5rem;
+    margin-top: 1rem;
   }
 `
 
@@ -42,8 +42,13 @@ export const ProfileHeader = styled.header`
 
   a {
     text-transform: uppercase;
+    font-size: 0.8rem;
     text-decoration: none;
     color: ${props => props.theme['blue']};
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
   }
 `
 
@@ -51,4 +56,10 @@ export const ProfileFooter = styled.div`
   display: flex;
   gap: 1.5rem;
   margin-top: 1.5rem;
+  
+  span {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
 `

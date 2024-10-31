@@ -7,6 +7,10 @@ import {
   ProfileImg,
   ProfileInfo,
 } from "./styles";
+import IconArrow from "../../assets/svg/IconArrow";
+import IconGithub from "../../assets/svg/IconGithub";
+import IconCompany from "../../assets/svg/IconCompany";
+import IconFollowers from "../../assets/svg/IconFollowers";
 
 interface GithubProfile {
   avatar_url: string;
@@ -53,15 +57,26 @@ const Profile = () => {
         <ProfileInfo>
           <ProfileHeader>
             <h2>{profileData.name}</h2>
-            <a href={profileData.html_url}>GitHub</a>
+            <a href={profileData.html_url}>
+              GitHub <IconArrow />
+            </a>
           </ProfileHeader>
 
           <p>{profileData.bio}</p>
 
           <ProfileFooter>
-            <span>{profileData.login}</span>
-            <span>{profileData.public_repos}</span>
-            <span>{profileData.followers}</span>
+            <span>
+              <IconGithub />
+              {profileData.login}
+            </span>
+            <span>
+              <IconCompany />
+              {profileData.public_repos} public repos
+            </span>
+            <span>
+              <IconFollowers />
+              {profileData.followers} seguidores
+            </span>
           </ProfileFooter>
         </ProfileInfo>
       </ProfileContainer>
