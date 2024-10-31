@@ -34,8 +34,6 @@ async function fetchGithubProfile(
   }
 }
 
-console.log(fetchGithubProfile("lucasshira").then((data) => console.log(data)));
-
 const Profile = () => {
   const [profileData, setProfileData] = useState<GithubProfile | null>(null);
 
@@ -50,37 +48,35 @@ const Profile = () => {
   }
 
   return (
-    <div>
-      <ProfileContainer>
-        <ProfileImg src={profileData!.avatar_url} alt="Foto de perfil" />
+    <ProfileContainer>
+      <ProfileImg src={profileData!.avatar_url} alt="Foto de perfil" />
 
-        <ProfileInfo>
-          <ProfileHeader>
-            <h2>{profileData.name}</h2>
-            <a href={profileData.html_url}>
-              GitHub <IconArrow />
-            </a>
-          </ProfileHeader>
+      <ProfileInfo>
+        <ProfileHeader>
+          <h2>{profileData.name}</h2>
+          <a href={profileData.html_url}>
+            GitHub <IconArrow />
+          </a>
+        </ProfileHeader>
 
-          <p>{profileData.bio}</p>
+        <p>{profileData.bio}</p>
 
-          <ProfileFooter>
-            <span>
-              <IconGithub />
-              {profileData.login}
-            </span>
-            <span>
-              <IconCompany />
-              {profileData.public_repos} public repos
-            </span>
-            <span>
-              <IconFollowers />
-              {profileData.followers} seguidores
-            </span>
-          </ProfileFooter>
-        </ProfileInfo>
-      </ProfileContainer>
-    </div>
+        <ProfileFooter>
+          <span>
+            <IconGithub />
+            {profileData.login}
+          </span>
+          <span>
+            <IconCompany />
+            {profileData.public_repos} public repos
+          </span>
+          <span>
+            <IconFollowers />
+            {profileData.followers} seguidores
+          </span>
+        </ProfileFooter>
+      </ProfileInfo>
+    </ProfileContainer>
   );
 };
 

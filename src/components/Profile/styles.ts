@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-export const ProfileContainer = styled.section`
+export const ProfileContainer = styled.main`
   background-color: ${props => props.theme['base-profile']};
-  max-width: 864px;
   height: 212px;
   border-radius: 10px;
   margin-top: -88px;
+  width: 100%;
   padding: 2rem 2.5rem;
 
   display: grid;
