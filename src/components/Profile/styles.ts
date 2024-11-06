@@ -18,10 +18,6 @@ export const ProfileContainer = styled.main`
   }
 `
 
-export const ProfileInfo = styled.div`
-  gap: 1.5rem;
-`
-
 export const ProfileImg = styled.img`
   width: 100%;
   max-width: 148px;
