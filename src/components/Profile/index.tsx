@@ -5,7 +5,6 @@ import {
   ProfileFooter,
   ProfileHeader,
   ProfileImg,
-  ProfileInfo,
 } from "./styles";
 import IconArrow from "../../assets/svg/IconArrow";
 import IconGithub from "../../assets/svg/IconGithub";
@@ -51,7 +50,7 @@ const Profile = () => {
     <ProfileContainer>
       <ProfileImg src={profileData!.avatar_url} alt="Foto de perfil" />
 
-      <ProfileInfo>
+      <div>
         <ProfileHeader>
           <h2>{profileData.name}</h2>
           <a href={profileData.html_url}>
@@ -75,7 +74,7 @@ const Profile = () => {
             {profileData.followers} seguidores
           </span>
         </ProfileFooter>
-      </ProfileInfo>
+      </div>
     </ProfileContainer>
   );
 };
