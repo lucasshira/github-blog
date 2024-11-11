@@ -1,35 +1,31 @@
+import { useContext } from "react";
 import { PostBody, PostContainer, PostContent, PostHeader } from "./styles";
+import { PostContext } from "../../../../contexts/PostContext";
+import { dateFormatter } from "../../../../utils/formatter";
 
-interface PostProps {
+interface Post {
+  id: number;
   title: string;
-  body: string;
-  user: {
-    login: string;
-  };
   created_at: string;
-  comments: string;
-  url: string;
+  body: string;
 }
 
-const Post = ({ title, body }: PostProps) => {
+const Post = (): JSX.Element => {
+  const { posts } = useContext(PostContext);
+
   return (
     <PostContainer>
-      <PostContent>
-        <PostHeader>
-          <span>JavaScript data types and data structures</span>
-          <p>Ha 1 dia</p>
-        </PostHeader>
-        <PostBody>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate
-          illo dignissimos, cupiditate earum necessitatibus eos, quas nam, illo
-          dignissimos, cupiditate earum necessitatibus eos, quas nam.
-        </PostBody>
-      </PostContent>
-      <PostContent>Texto</PostContent>
-      <PostContent>Texto</PostContent>
-      <PostContent>Texto</PostContent>
-      <PostContent>Texto</PostContent>
-      <PostContent>Texto</PostContent>
+      {posts.map((post: Post) => {
+        return (
+          <PostContent key={post.id}>
+            <PostHeader>
+              <span>{post.title}</span>
+              <p>{dateFormatter.format(new Date(post.created_at))}</p>
+            </PostHeader>
+            <PostBody>{post.body}</PostBody>
+          </PostContent>
+        );
+      })}
     </PostContainer>
   );
 };

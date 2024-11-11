@@ -15,6 +15,8 @@ export const PostContent = styled.div`
   display: flex;
   padding: 2rem;
   flex-direction: column;
+  max-width: 416px;
+  cursor: pointer;
 `
 
 export const PostHeader = styled.header`
