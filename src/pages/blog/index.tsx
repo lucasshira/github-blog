@@ -1,22 +1,17 @@
+import { Outlet } from "react-router-dom";
 import Header from "../../components/Header";
-import Profile from "../../components/Profile";
-import Post from "./components/Posts";
-import SearchInput from "./components/SearchInput";
 import { BlogContainer } from "./styles";
 
-const Blog = () => {
+const Home = () => {
   return (
     <div>
       <Header />
 
       <BlogContainer>
-        <Profile />
-        <SearchInput />
-
-        <Post />
+        <Outlet />
       </BlogContainer>
     </div>
   );
 };
 
-export default Blog;
+export default Home;

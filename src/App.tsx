@@ -1,7 +1,7 @@
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./styles/global";
 import { defaultTheme } from "./styles/themes/default";
-import Blog from "./pages/blog";
+import Home from "./pages/blog";
 import PostProvider from "./contexts/PostContext";
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
       <GlobalStyle />
 
       <PostProvider>
-        <Blog />
+        <Home />
       </PostProvider>
     </ThemeProvider>
   );
