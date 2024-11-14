@@ -7,6 +7,7 @@ export const LogoContainer = styled.div`
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  cursor: pointer;
   
   span {
     text-transform: uppercase;

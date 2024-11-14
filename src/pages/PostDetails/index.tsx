@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useContext } from "react";
 import { PostContext } from "../../contexts/PostContext";
+import Profile from "../../components/Profile";
 
 const PostDetails = () => {
   const { postId } = useParams<{ postId: string }>();
@@ -13,9 +14,17 @@ const PostDetails = () => {
 
   return (
     <div>
-      <h1>{post.title}</h1>
+      <Profile />
     </div>
   );
 };
 
 export default PostDetails;
+
+{
+  /* <h1>{post.title}</h1>
+      <h1>{post.user.login}</h1>
+      <h1>{post.created_at}</h1>
+      <h1>{post.html_url}</h1>
+      <h1>{post.body}</h1> */
+}

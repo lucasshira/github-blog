@@ -1,8 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import { LogoContainer } from "./styles";
 
 const Logo = () => {
+  const navigate = useNavigate();
+
   return (
-    <LogoContainer>
+    <LogoContainer onClick={() => navigate("/")}>
       <svg
         width="46"
         height="40"

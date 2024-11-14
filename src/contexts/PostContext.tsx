@@ -11,6 +11,7 @@ interface Post {
   created_at: string;
   comments: string;
   url: string;
+  html_url: string;
 }
 
 interface TransactionContextType {
