@@ -48,4 +48,5 @@ export const SummaryFooter = styled.div`
 
 export const SummaryContent = styled.div`
   margin-top: 2.5rem;
+  padding-bottom: 2.5rem;
 `

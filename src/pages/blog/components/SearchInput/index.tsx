@@ -24,8 +24,12 @@ const SearchInput = () => {
   });
 
   const handleSearchPublications = async (data: SearchFormInput) => {
-    const { query } = data;
-    await fetchPosts(query);
+    try {
+      const { query } = data;
+      await fetchPosts(query);
+    } catch (error) {
+      console.error("Erro ao buscar publicações:", error);
+    }
   };
 
   return (

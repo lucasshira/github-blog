@@ -6,5 +6,5 @@ export const BlogContainer = styled.div`
   align-items: center;
   flex-direction: column;
   margin: 0 auto;
-  padding-bottom: 5rem;
+  padding-bottom: 3rem;
 `
