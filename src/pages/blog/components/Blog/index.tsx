@@ -8,6 +8,7 @@ const Blog = () => {
 
   const handlePostOpen = (postId: number) => {
     navigate(`/post/${postId}`);
+    window.scrollTo(0, 0);
   };
 
   return (

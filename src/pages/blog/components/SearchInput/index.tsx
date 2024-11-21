@@ -3,6 +3,8 @@ import { MagnifyingGlass } from "phosphor-react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useContext } from "react";
+import { PostContext } from "../../../../contexts/PostContext";
 
 const searchInputSchema = z.object({
   query: z.string(),
@@ -11,6 +13,8 @@ const searchInputSchema = z.object({
 type SearchFormInput = z.infer<typeof searchInputSchema>;
 
 const SearchInput = () => {
+  const { fetchPosts } = useContext(PostContext);
+
   const {
     handleSubmit,
     register,
@@ -19,8 +23,9 @@ const SearchInput = () => {
     resolver: zodResolver(searchInputSchema),
   });
 
-  const handleSearchPublications = (data: SearchFormInput) => {
-    console.log(data);
+  const handleSearchPublications = async (data: SearchFormInput) => {
+    const { query } = data;
+    await fetchPosts(query);
   };
 
   return (

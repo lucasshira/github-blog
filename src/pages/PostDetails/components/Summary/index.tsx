@@ -61,11 +61,3 @@ const Summary = () => {
 };
 
 export default Summary;
-
-{
-  /* <h1>{post.title}</h1>
-      <h1>{post.user.login}</h1>
-      <h1>{post.created_at}</h1>
-      <h1>{post.html_url}</h1>
-      <h1>{post.body}</h1> */
-}
